@@ -1,0 +1,13 @@
+{
+  "name": "tiny-scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "co": "^4.6.0",
+    "flyd": "^0.2.4",
+    "path-to-regexp": "^1.7.0",
+    "transducers.js": "^0.3.2"
+  }
+}
