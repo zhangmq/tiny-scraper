@@ -10,6 +10,8 @@
 * flyd
 * transducers.js
 * path-to-regexp
+* axios
+* co
 
 ## 安装
 ```
