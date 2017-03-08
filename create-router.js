@@ -33,6 +33,7 @@ module.exports = function createRouter() {
     const [ path, query ] = url.split('?');
 
     if (!path) {
+      console.log(`${path} invalid.`);
       process.nextTick(() => output$.end(true));
       return output$;
     }
