@@ -43,7 +43,7 @@ const scraper = createScraper({
 
 const { requestError$, routeError$ } = scraper;
 
-//on(error => console.log('download error', error), requestError$);
+on(error => console.log('download error', error), requestError$);
 on(error => console.log('route error', error), routeError$);
 
 scraper.task$([get('https://github.com/zhangmq/tiny-scraper')]);
