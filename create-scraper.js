@@ -12,7 +12,9 @@ const request = (config, duration = 0) => {
 
   const delay = new Promise(resolve => setTimeout(() => resolve('delayed'), duration));
 
-  Promise.all([get, delay]).then(([result]) => output$(result));
+  Promise.all([get, delay])
+    .then(([result]) => output$(result))
+    .then(() => output$.end(true));
 
   return output$;
 }

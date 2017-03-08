@@ -33,8 +33,7 @@ module.exports = function createRouter() {
     const [ path, query ] = url.split('?');
 
     if (!path) {
-      console.log(`${path} invalid.`);
-      process.nextTick(() => output$([]));
+      process.nextTick(() => output$.end(true));
       return output$;
     }
 
@@ -47,13 +46,14 @@ module.exports = function createRouter() {
 
     if (!matched) {
       console.log(`${path} not match any routes.`);
-      process.nextTick(() => output$([]));
+      process.nextTick(() => output$.end(true));
       return output$;
     }
 
     co(matched.callback(config, response, matched.params, query))
       .then(result => output$({ tasks: result }))
-      .catch(error => output$({ error }));
+      .catch(error => output$({ error }))
+      .then(() => output$.end(true));
 
     return output$;
   }
