@@ -1,5 +1,5 @@
 # tiny-scraper
-a simple scraper, friendly usage.
+a simple web scraper, friendly usage.
 
 ## Feature
 * request will be queued, configurable request frequency and delay. 
