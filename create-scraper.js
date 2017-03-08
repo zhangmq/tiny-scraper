@@ -17,7 +17,7 @@ const request = (config, duration = 0) => {
   return output$;
 }
 
-module.exports = ({ maxRequest, requestDuration, customRequest, router }) => {
+module.exports = ({ maxRequest, requestDuration, router }) => {
   const task$ = stream();
   const requestProxy$ = stream();
   
