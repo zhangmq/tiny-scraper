@@ -6,6 +6,6 @@
   "dependencies": {
     "cheerio": "^0.22.0",
     "flyd": "^0.2.4",
-    "tiny-scraper": "file:../"
+    "tiny-scraper": "^0.1.0"
   }
 }

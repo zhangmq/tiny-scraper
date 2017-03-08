@@ -219,8 +219,9 @@ string_decoder@~0.10.x:
   version "0.10.31"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-0.10.31.tgz#62e203bc41766c6c28c9fc84301dab1c5310fa94"
 
-"tiny-scraper@file:../":
-  version "1.0.0"
+tiny-scraper@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-scraper/-/tiny-scraper-0.1.0.tgz#f2515f7713239747b326a43cbded51368114c5ff"
   dependencies:
     axios "^0.15.3"
     co "^4.6.0"
