@@ -58,10 +58,13 @@ const scraper = createScraper({
 scraper.tasks$([/* seed tasks */])
 ```
 
-### scraper.tasks$
+### scraper.task$
 task input stream. you can send seed url or resend failed request into this steam.
 #### Parameters
 * ***input*** a array of request config. please refer to [axios](https://github.com/mzabriskie/axios) document. 
+
+### scraper.running$
+current running tasks.
 
 ### scraper.requestError$
 failed request stream.
