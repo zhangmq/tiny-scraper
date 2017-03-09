@@ -52,7 +52,8 @@ const { createScraper } = require('tiny-scraper');
 const scraper = createScraper({
   maxRequest: 1,
   requestDuration: 2000,
-  router
+  router,
+  downloader: axios.request
 });
 
 scraper.tasks$([/* seed tasks */])
