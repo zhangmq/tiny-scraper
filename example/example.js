@@ -1,4 +1,4 @@
-const { createRouter, createScraper } = require('../');
+const { createRouter, createScraper } = require('tiny-scraper');
 const cheerio = require('cheerio');
 const { on } = require('flyd');
 const { get, compose } = require('./utils');
