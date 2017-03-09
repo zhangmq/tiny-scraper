@@ -3,10 +3,10 @@ const filter = require('flyd/module/filter');
 const flatMap = require('flyd/module/flatmap');
 const axios = require('axios');
 
-const request = (config, duration = 0) => {
+const request = downloader => (config, duration = 0) => {
   const output$ = stream();
   
-  const get = axios.request(config)
+  const get = downloader(config)
     .then(response => ({ config, response }))
     .catch(error => ({ config, error }));
 
@@ -19,11 +19,13 @@ const request = (config, duration = 0) => {
   return output$;
 }
 
-module.exports = ({ maxRequest, requestDuration, router }) => {
+module.exports = ({ maxRequest, requestDuration, router, downloader }) => {
   const task$ = stream();
   const requestProxy$ = stream();
+
+  const requestByDownloader = request(downloader);
   
-  const response$ = flatMap(config => request(config, requestDuration), requestProxy$);
+  const response$ = flatMap(config => requestByDownloader(config, requestDuration), requestProxy$);
   
   const buffer$ = scan(
     (state, action) => action(state),

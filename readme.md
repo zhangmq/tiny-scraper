@@ -9,7 +9,6 @@ a simple web scraper, friendly usage.
 * flyd
 * transducers.js
 * path-to-regexp
-* axios
 * co
 
 ## Install
@@ -47,6 +46,7 @@ create a scraper.
   * ***maxRequest*** max requests count paralleled.
   * ***requestDuration*** min request duration, if request completed early, will wait until specified duration.
   * ***router*** you implemented router. 
+  * ***downloader*** method to request page, config => responsePromise. example: axios.request
 ```javascript
 const { createScraper } = require('tiny-scraper');
 const scraper = createScraper({

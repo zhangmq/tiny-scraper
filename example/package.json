@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.15.3",
     "cheerio": "^0.22.0",
     "flyd": "^0.2.4",
     "tiny-scraper": "^0.1.0"

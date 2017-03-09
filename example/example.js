@@ -1,6 +1,7 @@
 const { createRouter, createScraper } = require('tiny-scraper');
 const cheerio = require('cheerio');
 const { on } = require('flyd');
+const { request } = require('axios');
 const { get, compose } = require('./utils');
 
 const github = 'https://github.com';
@@ -38,7 +39,8 @@ matchGithub('/zhangmq/tiny-scraper/blob/master/:file*', function* (req, res, par
 const scraper = createScraper({
     maxRequest: 1,
     requestDuration: 3000,
-    router
+    router,
+    downloader: request
 });
 
 const { requestError$, routeError$ } = scraper;
