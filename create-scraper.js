@@ -1,7 +1,6 @@
 const { stream, on, merge, combine, scan } = require('flyd');
 const filter = require('flyd/module/filter');
 const flatMap = require('flyd/module/flatmap');
-const axios = require('axios');
 
 const request = downloader => (config, duration = 0) => {
   const output$ = stream();
